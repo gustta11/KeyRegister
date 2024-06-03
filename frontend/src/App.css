@@ -42,24 +42,3 @@ button{
   border: none;
   cursor: pointer;
 }
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.imagem-botao {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.imagem-botao img {
-  width: 150px; 
-  height: auto;
-  margin-bottom: 10px;
-}
