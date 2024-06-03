@@ -1,3 +1,4 @@
+import './Home.css'
 import Professor from '../imagens/icone_professor.png';
 import Sala from '../imagens/icone_salas.png';
 import Disciplina from '../imagens/icone_livro.png';
