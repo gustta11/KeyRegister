@@ -10,6 +10,11 @@ body {
   min-height: 100vh;
 }
 
+.voltar img{
+  width: 45px;
+  margin: 20px;
+}
+
 header {
   background-color: white;
   color: black;
