@@ -1,4 +1,4 @@
-import {read, create, update, deleteProfessores} from '../model/pessoaModel.js'
+import {read, create, update, deleteProf} from '../model/pessoaModel.js'
 
 export async function createProfessores(req, res){
     const{nome, matricula} = req.body
@@ -38,7 +38,7 @@ export async function updateProfessores(req,res){
 
 export async function deleteProfessores(req,res){
     const {id} = req.params
-    deleteProfessores(id,(err,result) =>{
+    deleteProf(id,(err,result) =>{
         if(err){
             res.status(500).json({error:err.message})
             return
