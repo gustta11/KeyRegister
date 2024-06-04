@@ -1,4 +1,4 @@
-import {read, create, update, deleteProf} from '../model/pessoaModel.js'
+import {read, create, update, deleteProf} from '../model/professorModel.js'
 
 export async function createProfessores(req, res){
     const{nome, matricula} = req.body

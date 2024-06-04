@@ -1,4 +1,4 @@
-import {read, create, update, deleteSal} from '../model/pessoaModel.js'
+import {read, create, update, deleteSal} from '../model/salasModel.js'
 
 export async function createSalas(req, res){
     const{nome_sala} = req.body
