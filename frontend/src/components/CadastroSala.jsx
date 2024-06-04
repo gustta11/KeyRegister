@@ -1,58 +1,71 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import Voltar from '../imagens/icone_voltar.png';
+import Sala from '../imagens/icone_salas.png';
+import './cadastro.css';
 
-function CadastroSala () {
+function CadastroSala() {
 
-const [formValores, setFormValores] = useState({
-  nome_sala: '',
-});
+  const [formValores, setFormValores] = useState({
+    nome_sala: '',
+  });
 
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormValores(prevState => ({
-    ...prevState,
-    [name]: value
-  }));
-};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValores(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  try {
-    console.log("Dados a serem enviados: ", formValores);
-    const response = await fetch('http://localhost:3000/pessoas', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(formValores)
-    });
+    try {
+      console.log("Dados a serem enviados: ", formValores);
+      const response = await fetch('http://localhost:3000/pessoas', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify(formValores)
+      });
 
-    const json = await response.json();
-    console.log(response)
-    console.log(json);
+      const json = await response.json();
+      console.log(response)
+      console.log(json);
 
-  } catch (err) {
-    console.error("Erro ao enviar", err)
-  }
-};
+    } catch (err) {
+      console.error("Erro ao enviar", err)
+    }
+  };
 
-return (
+  return (
 
-  <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
 
-    <div className='container-create'>
-      <div className='formulario'>
-        <label>
-          Nome da Sala
-          <input type="text" name="nome" value={formValores.nome_sala} onChange={handleChange} />
-        </label>
+      <div className='container'>
 
-        <button type='submit'> CADASTRAR </button>
+        <div className='voltar'>
+          <Link to='/'><img src={Voltar} alt="voltar" /></Link>
+        </div>
 
+        <div className='formulario'>
+
+          <img src={Sala} alt="icone sala" />
+
+          <label>
+            Nome da Sala
+            <input type="text" name="nome" value={formValores.nome_sala} onChange={handleChange} />
+          </label>
+
+          <div className="botao-cadastrar">
+            <button type='submit'> CADASTRAR </button>
+          </div>
+
+        </div>
       </div>
-    </div>
-  </form>
-)
+    </form>
+  )
 }
 export default CadastroSala;
-

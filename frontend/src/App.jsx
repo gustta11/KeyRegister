@@ -7,7 +7,6 @@ import CadastroDisciplina from './components/CadastroDisciplina';
 import CadastroSala from './components/CadastroSala';
 import CadastroTurma from './components/CadastroTurma';
 import Visualizar from './components/Visualizar';
-import Voltar from './imagens/icone_voltar.png'
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 
 
@@ -20,10 +19,6 @@ function App() {
           <Header />
         </header>
         
-        <div className='voltar'>
-        <Link to='/'><img src={Voltar} alt="voltar" /></Link>
-        </div>
-
         <main>
           <Routes>
             <Route path='/' element={<Home />} />

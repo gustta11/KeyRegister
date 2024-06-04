@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Voltar from '../imagens/icone_voltar.png';
+import './cadastro.css';
 
 function Visualizar() {
 
@@ -23,12 +26,16 @@ function Visualizar() {
   };
 
   useEffect(() => {
-    handleSubmit(); 
+    handleSubmit();
   }, []);
 
   return (
-    <div className="read-container">
+    <div className="container">
+      <div className='voltar'>
+        <Link to='/'><img src={Voltar} alt="voltar" /></Link>
+      </div>
       <form onSubmit={handleSubmit} className="read-form">
+        
         <button type="submit" className="read-button">Ler dados do banco</button>
       </form>
 

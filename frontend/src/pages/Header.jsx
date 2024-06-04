@@ -1,7 +1,4 @@
 import './Header.css'
-import { Link } from 'react-router-dom';
-import Voltar from '../imagens/icone_voltar.png';
-
 
 const Header = () => {
     return (
