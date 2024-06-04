@@ -9,7 +9,7 @@ export async function createSalas(req, res){
            res.status(500).json({error:err.message})
            return
         }
-        res.status(201).json({mensagem: 'Professor registrado com sucesso!'})
+        res.status(201).json({mensagem: 'Sala registrada com sucesso!'})
     })
 }
 
