@@ -4,10 +4,7 @@ function CadastroProfessor () {
 
 const [formValores, setFormValores] = useState({
   nome: '',
-  dataNascimento: '',
-  genero: '',
-  cpf: '',
-  telefone: '',
+  matricula: '',
 });
 
 const handleChange = (e) => {
@@ -51,20 +48,8 @@ return (
           <input type="text" name="nome" value={formValores.nome} onChange={handleChange} />
         </label>
         <label>
-          Data de Nascimento
-          <input type="date" name="dataNascimento" value={formValores.dataNascimento} onChange={handleChange} />
-        </label>
-        <label>
-          Gênero
-          <input type="text" name="genero" value={formValores.genero} onChange={handleChange} />
-        </label>
-        <label>
-          CPF
-          <input type="text" name="cpf" value={formValores.cpf} onChange={handleChange} />
-        </label>
-        <label>
-          Telefone
-          <input type="text" name="telefone" value={formValores.telefone} onChange={handleChange} />
+          Matrícula
+          <input type="text" name="matricua" value={formValores.matricula} onChange={handleChange} />
         </label>
 
         <button type='submit'>CADASTRAR</button>
