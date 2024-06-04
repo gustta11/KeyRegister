@@ -3,11 +3,7 @@ import { useState } from "react";
 function CadastroDisciplina () {
 
 const [formValores, setFormValores] = useState({
-  nome: '',
-  dataNascimento: '',
-  genero: '',
-  cpf: '',
-  telefone: '',
+  nome_disciplina: '',
 });
 
 const handleChange = (e) => {
@@ -47,24 +43,8 @@ return (
     <div className='container-create'>
       <div className='formulario'>
         <label>
-          Nome
+          Nome da Disciplina
           <input type="text" name="nome" value={formValores.nome} onChange={handleChange} />
-        </label>
-        <label>
-          Data de Nascimento
-          <input type="date" name="dataNascimento" value={formValores.dataNascimento} onChange={handleChange} />
-        </label>
-        <label>
-          Gênero
-          <input type="text" name="genero" value={formValores.genero} onChange={handleChange} />
-        </label>
-        <label>
-          CPF
-          <input type="text" name="cpf" value={formValores.cpf} onChange={handleChange} />
-        </label>
-        <label>
-          Telefone
-          <input type="text" name="telefone" value={formValores.telefone} onChange={handleChange} />
         </label>
 
         <button type='submit'> CADASTRAR </button>
