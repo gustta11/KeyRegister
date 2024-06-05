@@ -52,7 +52,7 @@ function CadastroDisciplina() {
           <img src={Disciplina} alt="icone disciplina" />
           <label>
             Nome da Disciplina
-            <input type="text" name="nome" value={formValores.nome} onChange={handleChange} />
+            <input type="text" name="nome_disciplina" value={formValores.nome_disciplina} onChange={handleChange} />
           </label>
 
           <div className="botao-cadastrar">
