@@ -52,7 +52,7 @@ function CadastroTurma() {
           <img src={Turma} alt="icone turma" />
           <label>
             Nome da Turma
-            <input type="text" name="nome" value={formValores.nome_turma} onChange={handleChange} />
+            <input type="text" name="nome_turma" value={formValores.nome_turma} onChange={handleChange} />
           </label>
 
           <div className="botao-cadastrar">
