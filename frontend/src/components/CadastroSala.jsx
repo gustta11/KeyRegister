@@ -56,7 +56,7 @@ function CadastroSala() {
 
           <label>
             Nome da Sala
-            <input type="text" name="nome" value={formValores.nome_sala} onChange={handleChange} />
+            <input type="text" name="nome_sala" value={formValores.nome_sala} onChange={handleChange} />
           </label>
 
           <div className="botao-cadastrar">
