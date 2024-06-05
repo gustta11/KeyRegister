@@ -59,7 +59,7 @@ function CadastroProfessor() {
           </label>
           <label>
             Matrícula
-            <input type="text" name="matricua" value={formValores.matricula} onChange={handleChange} />
+            <input type="text" name="matricula" value={formValores.matricula} onChange={handleChange} />
           </label>
           <div className="botao-cadastrar">
             <button type='submit'>CADASTRAR</button>
