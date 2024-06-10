@@ -8,6 +8,7 @@ function CadastroTurma() {
 
   const [formValores, setFormValores] = useState({
     nome_turma: '',
+    turno:''
   });
 
   const handleChange = (e) => {
@@ -53,6 +54,10 @@ function CadastroTurma() {
           <label>
             Nome da Turma
             <input type="text" name="nome_turma" value={formValores.nome_turma} onChange={handleChange} />
+          </label>
+          <label>
+            Turno
+            <input type="text" name="nome_turma" value={formValores.turno} onChange={handleChange} />
           </label>
 
           <div className="botao-cadastrar">
