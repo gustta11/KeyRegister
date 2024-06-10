@@ -2,7 +2,7 @@ import {read, create, update, deleteDiscip} from '../model/disciplinasModel.js'
 
 export async function createDisciplinas(req, res){
     const{nome_disciplina} = req.body
-    console.log('Dados recebidos do frontend:', {nome,matricula})
+    console.log('Dados recebidos do frontend:', {nome_disciplina})
 
     create(nome_disciplina,(err, result) =>{
         if(err){
