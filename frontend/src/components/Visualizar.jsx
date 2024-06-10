@@ -1,47 +1,95 @@
-import React, { useState, useEffect } from "react";
-import './CadastroDisciplina';
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import Voltar from '../imagens/icone_voltar.png';
+import './visualizar.css';
 
-function Visualizar() {
+const Visualizar = () => {
+  const [professores, setProfessores] = useState([]);
+  const [salas, setSalas] = useState([]);
+  const [disciplinas, setDisciplinas] = useState([]);
+  const [turmas, setTurmas] = useState([]);
 
-  const [consultaDados, setconsultaDados] = useState([]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const fetchData = async (url, setState) => {
     try {
-      const response = await fetch('http://localhost:3000/disciplinas', {
+      const response = await fetch(url, {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       });
-
-      const data = await response.json();
-      setconsultaDados(data);
+      const json = await response.json();
+      setState(json);
     } catch (err) {
-      console.error("Erro ao buscar dados no banco", err);
+      console.error("Erro ao enviar", err);
     }
   };
 
   useEffect(() => {
-    handleSubmit(); 
+    fetchData('http://localhost:3000/professores', setProfessores);
+    fetchData('http://localhost:3000/salas', setSalas);
+    fetchData('http://localhost:3000/disciplinas', setDisciplinas);
+    fetchData('http://localhost:3000/turmas', setTurmas);
   }, []);
 
   return (
-    <div className="read-container">
-      <form onSubmit={handleSubmit} className="read-form">
-        <button type="submit" className="read-button">Ler dados do banco</button>
-      </form>
-
-      <ol className="read-list">
-        {consultaDados.map((linha, index) => (
-          <li key={index} className="read-dados">
-            <div className="dados">nome_disciplina: {linha.nome_disciplina}</div>
+    <div className="layout-geral-consulta">
+      <div className='voltar'>
+        <Link to='/'><img src={Voltar} alt="voltar" /></Link>
+      </div>
+      
+      <h2>Professores</h2>
+      <ul>
+        {professores.map((professor, index) => (
+          <li key={index}>
+            {Object.entries(professor).map(([key, val]) => (
+              <div key={key}>
+                <strong>{key}:</strong> {val}
+              </div>
+            ))}
           </li>
         ))}
-      </ol>
+      </ul>
+
+      <h2>Salas</h2>
+      <ul>
+        {salas.map((sala, index) => (
+          <li key={index}>
+            {Object.entries(sala).map(([key, val]) => (
+              <div key={key}>
+                <strong>{key}:</strong> {val}
+              </div>
+            ))}
+          </li>
+        ))}
+      </ul>
+
+      <h2>Disciplinas</h2>
+      <ul>
+        {disciplinas.map((disciplina, index) => (
+          <li key={index}>
+            {Object.entries(disciplina).map(([key, val]) => (
+              <div key={key}>
+                <strong>{key}:</strong> {val}
+              </div>
+            ))}
+          </li>
+        ))}
+      </ul>
+
+      <h2>Turmas</h2>
+      <ul>
+        {turmas.map((turma, index) => (
+          <li key={index}>
+            {Object.entries(turma).map(([key, val]) => (
+              <div key={key}>
+                <strong>{key}:</strong> {val}
+              </div>
+            ))}
+          </li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default Visualizar;
