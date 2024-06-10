@@ -24,7 +24,7 @@ function CadastroProfessor() {
 
     try {
       console.log("Dados a serem enviados: ", formValores);
-      const response = await fetch('http://localhost:3000/professor', {
+      const response = await fetch('http://localhost:3000/professores', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'
