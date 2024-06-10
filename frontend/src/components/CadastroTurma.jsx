@@ -57,7 +57,7 @@ function CadastroTurma() {
           </label>
           <label>
             Turno
-            <input type="text" name="nome_turma" value={formValores.turno} onChange={handleChange} />
+            <input type="text" name="turno" value={formValores.turno} onChange={handleChange} />
           </label>
 
           <div className="botao-cadastrar">
