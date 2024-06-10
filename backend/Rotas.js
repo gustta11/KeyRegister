@@ -9,10 +9,10 @@ import {getAllDisciplinas, createDisciplinas, updateDisciplinas, deleteDisciplin
 app.use(express.json())
 app.use(cors())
 
-app.get('/professor', getAllProfessores)
-app.post('/professor', createProfessores)
-app.put('/professor/:id',updateProfessores)
-app.delete('/professor/:id', deleteProfessores)
+app.get('/professores', getAllProfessores)
+app.post('/professores', createProfessores)
+app.put('/professores/:id',updateProfessores)
+app.delete('/professores/:id', deleteProfessores)
 
 app.get('/salas', getAllSalas)
 app.post('/salas', createSalas)
